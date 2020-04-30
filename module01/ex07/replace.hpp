@@ -30,6 +30,11 @@ public:
 		s1 = argv[2];
 		s2 = argv[3];
 	}
+	~s_data()
+	{
+		in.close();
+		out.close();
+	}
 }				t_data;
 
 //PROTOTYPES
