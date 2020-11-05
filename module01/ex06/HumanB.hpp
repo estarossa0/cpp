@@ -7,16 +7,7 @@ public:
 	Weapon wep;
 	std::string name;
 
-	HumanB(std::string new_name)
-	{
-		name = new_name;
-	}
-	void	setWeapon(Weapon new_weapon)
-	{
-		wep = new_weapon;
-	}
-	void attack()
-	{
-		std::cout << name + " attacks with his " + wep.type + "\n";
-	}
+	HumanB(std::string new_name);
+	void	setWeapon(Weapon new_weapon);
+	void 	attack();
 };

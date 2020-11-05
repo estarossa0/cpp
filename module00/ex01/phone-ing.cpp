@@ -28,12 +28,12 @@ contact::add()
 }
 
 void
-contact::display(std::string str)
+display(std::string str)
 {
 	int	index = 0;
 	while (str[index] && index < 10)
 		LOG str[index++];
-	if (index < str.size())
+	if (index < (int)str.size())
 	{
 		LOG "\b.";
 	}
@@ -46,11 +46,11 @@ void
 contact::display()
 {
 	LOG "|";
-	display(first_name);
+	::display(first_name);
 	LOG "|";
-	display(last_name);
+	::display(last_name);
 	LOG "|";
-	display(nickname);
+	::display(nickname);
 }
 
 void

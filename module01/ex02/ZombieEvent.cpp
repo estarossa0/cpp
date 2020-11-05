@@ -1,12 +1,22 @@
 #include "ZombieEvent.hpp"
 
-void randomChump()
+Zombie	*ZombieEvent::newZombie(std::string name)
 {
-	srand(time(NULL));
-	int num = (rand() % 10);
-	std::string tab[] = {"Nova", "Lilian", "Amalia", "Luna", "Chucky", "Damien", "Freddy", "Bates", "Cole", "Carrie"};
-	Zombie walking_death;
-	walking_death.name = tab[num];
-	walking_death.type = 's';
-	walking_death.announce();
+	Zombie *walking_death = new Zombie(name);
+	walking_death->type = this->ZombieEventType;
+	return (walking_death);
+}
+
+void ZombieEvent::setZombieType(char type)
+{
+	ZombieEventType = type;
+}
+ZombieEvent::ZombieEvent()
+{
+	this->ZombieEventType = '0';
+	std::cout << "ZombieEvent created\n";
+}
+ZombieEvent::~ZombieEvent()
+{
+	std::cout << "ZombieEvent destroyed\n";
 }

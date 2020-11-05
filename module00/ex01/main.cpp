@@ -23,13 +23,15 @@ here_we_go(std::string &input, char &mode, std::vector<contact> &stack)
 	if (mode == SEARCH)
 	{
 		int index = atoi(input.c_str());
-		if (index - 1 < stack.size() && index > 0)
+		if (index - 1 < (int)stack.size() && index > 0)
 		{
 			stack[index - 1].full_display();
+			mode = NONE;
 		}
 		else
 		{
 			LOG "Index not found\n";
+			mode = NONE;
 		}
 	}
 }
@@ -45,7 +47,7 @@ main(void)
 	{
 		if (input == "add" && mode == NONE)
 		{
-			add(stack);
+			add(stack, mode);
 		}
 		else if (input == "search" && mode == NONE)
 		{
@@ -54,8 +56,8 @@ main(void)
 		}
 		else if (input == "exit" && mode == NONE)
 			return 0;
-		else if (input == "exit" && mode != NONE)
-			mode = NONE;
+	/* 	else if (input == "exit" && mode != NONE)
+			mode = NONE; */
 		else
 		{
 			here_we_go(input, mode, stack);

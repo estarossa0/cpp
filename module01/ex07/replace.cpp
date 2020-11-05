@@ -1,4 +1,4 @@
-#include "replace.h"
+#include "replace.hpp"
 
 bool	word_match(s_data *data, char c)
 {
@@ -40,4 +40,29 @@ void	replace(t_data *data)
 			data->out << c;
 		}
 	}
+}
+
+s_data::s_data(char **argv)
+	{
+		in.open(argv[1]);
+		if (!in.is_open())
+		{
+			std::cout << std::string(argv[1]) + " ";
+			std::cout << strerror(errno) << std::endl;
+			exit(errno);
+		}
+		out.open(std::string(argv[1]) + ".replace");
+		if (!out.is_open())
+		{
+			std::cout << strerror(errno) << std::endl;
+			exit(errno);
+		}
+		s1 = argv[2];
+		s2 = argv[3];
+	}
+
+s_data::~s_data()
+{
+	in.close();
+	out.close();
 }

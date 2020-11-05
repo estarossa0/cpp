@@ -1,5 +1,5 @@
 #include <iostream>
-#include "replace.h"
+#include "replace.hpp"
 
 void	check_error(int argc, char **argv)
 {

@@ -7,8 +7,7 @@ class Zombie
 	public:
 	std::string name;
 	char		type;
-	void	announce()
-	{
-		std::cout << "<" + name + " (" + type + ")> Give me a hug...\n";
-	}
+	Zombie(std::string name);
+	~Zombie();
+	void	announce();
 };

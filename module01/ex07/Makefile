@@ -6,10 +6,10 @@ SRC =	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
-	clang++ -g -I $(INCLUDES) $^ -o $(NAME)
+	clang++ $(FLAGS) -g -I $(INCLUDES) $^ -o $(NAME)
 
 %.o : %.cpp
-	clang++ -g -I $(INCLUDES) -o $@ -c $<
+	clang++ $(FLAGS) -g -I $(INCLUDES) -o $@ -c $<
 all: $(NAME)
 
 clean:

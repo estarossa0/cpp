@@ -3,7 +3,6 @@
 
 int main()
 {
-
-	ZombieHorde zmb(20);
+	ZombieHorde zmb(3);
 	zmb.announce();
 }

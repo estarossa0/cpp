@@ -28,8 +28,8 @@ class	contact
 	std::string		darkest_secret;
 	void	add();
 	void	display();
-	void	display(std::string);
 	void	full_display();
 };
-void	add(std::vector<contact> &stack);
+void	display(std::string);
+void	add(std::vector<contact> &stack, char &mode);
 void	list(std::vector<contact> &stack);

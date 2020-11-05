@@ -1,4 +1,11 @@
 #include <iostream>
 #include <string>
-void	ponyOnTheHeap(void);
-void	ponyOnTheStack(void);
+
+class pony
+{
+	public:
+	std::string desc;
+	pony();
+	~pony();
+};
+
