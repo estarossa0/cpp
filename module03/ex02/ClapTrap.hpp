@@ -3,7 +3,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		int		hit_points;
 		int		max_hit_points;
 		int		energy_points;
@@ -14,7 +14,10 @@ class ClapTrap
 		int		ranged_attack_damage;
 		int		armor_damage_reduction;
 	public:
+		ClapTrap();
 		ClapTrap(std::string const &name);
+		ClapTrap(int hit_points_, int max_hit_points_, int energy_points_, int max_energy_points_,
+		int level_, std::string	name_, int melee_attack_damage_, int ranged_attack_damage_, int armor_damage_reduction_);
 		ClapTrap(ClapTrap const &copy);
 		~ClapTrap(void);
 

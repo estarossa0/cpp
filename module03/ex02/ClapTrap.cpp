@@ -1,7 +1,22 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const &name):
-hit_points(100), max_hit_points(100), level(1), name(name)
+ClapTrap::ClapTrap(std::string const &name)
+{
+	std::cout << "Hey my name is " << name << " I'm new here" << std::endl;
+}
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "Hey ClapTrap is here" << std::endl;
+}
+//constructer
+//initialize
+//constructer body
+ClapTrap::ClapTrap(int hit_points_, int max_hit_points_, int energy_points_, int max_energy_points_,
+int level_, std::string	name_, int melee_attack_damage_, int ranged_attack_damage_, int armor_damage_reduction_):
+hit_points(hit_points_), max_hit_points(max_hit_points_), energy_points(energy_points_),
+max_energy_points(max_energy_points_), level(level_), name(name_), melee_attack_damage(melee_attack_damage_),
+ranged_attack_damage(ranged_attack_damage_), armor_damage_reduction(armor_damage_reduction_)
 {
 	std::cout << "Hey my name is " << name << " I'm new here" << std::endl;
 }
@@ -9,12 +24,12 @@ hit_points(100), max_hit_points(100), level(1), name(name)
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
 	*this = src;
-	std::cout << "Oh! hey look " << src.name << " this is " << name << " YOUR TWIN!!" << std::endl;
+	std::cout << "Oh! hey look ClapTrap " << src.name << " this is " << name << " YOUR TWIN!!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "poor " << name << " stopped functioning" << std::endl;
+	std::cout << "poor ClapTrap " << name << " stopped functioning" << std::endl;
 }
 
 ClapTrap &  ClapTrap::operator=(ClapTrap const & other)
