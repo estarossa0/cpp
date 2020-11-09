@@ -1,11 +1,13 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name):
-hit_points(100), max_hit_points(100), energy_points(100),
-max_energy_points(100), level(1), name(name), melee_attack_damage(30),
-ranged_attack_damage(20), armor_damage_reduction(5)
+FragTrap::FragTrap()
 {
-	std::cout << "Hey my name is " << name << " I'm new here" << std::endl;
+	std::cout << "Hey I'm FragTrap my name is " << name << " thsi my default constructer" << std::endl;
+}
+
+FragTrap::FragTrap(std::string const &name): ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
+{
+	std::cout << "Hey I'm FragTrap my name is " << name << " I'm new here" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src)
@@ -16,7 +18,7 @@ FragTrap::FragTrap(FragTrap const & src)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "poor " << name << " stopped functioning" << std::endl;
+	std::cout << "poor FragTrap " << name << " stopped functioning" << std::endl;
 }
 
 FragTrap &  FragTrap::operator=(FragTrap const & other)
@@ -32,49 +34,6 @@ FragTrap &  FragTrap::operator=(FragTrap const & other)
 	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "<cp " << name + " " + other.name + "> ENTER"<< std::endl;
 	return (*this);
-}
-
-void		FragTrap::rangedAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP " << name << " attacks " << target
-	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
-}
-
-void		FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << name << " attacks " << target
-	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
-}
-
-void    FragTrap::takeDamage(unsigned int amount)
-{
-	amount -= armor_damage_reduction;
-	if ((int)amount <= 0)
-		std::cout << name << " said: Know your place TRASH!" << std::endl;
-	else
-	{
-		if ((int)(hit_points - amount) <= 0)
-		{
-			std::cout << "looks like " << name << " just turned off after recieving " << amount << " damage"<< std::endl;
-			hit_points = 0;
-		}
-		else
-			hit_points -= amount;
-		std::cout << name << " take damage at " << amount << ". Now he has "
-		<< hit_points << " HP" << std::endl;
-	}
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	hit_points += amount;
-	if (hit_points >= max_hit_points)
-	{
-		hit_points = max_hit_points;
-		std::cout << name << " just been born again!" << std::endl;
-	}
-	else
-		std::cout << name << " gained " << amount << " of health" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target) {
