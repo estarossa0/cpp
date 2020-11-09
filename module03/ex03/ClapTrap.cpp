@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const &name)
+ClapTrap::ClapTrap(std::string const &name) : name(name)
 {
 	std::cout << "Hey I'm ClapTrap my name is " << name << " I'm new here" << std::endl;
 }
@@ -83,4 +83,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	else
 		std::cout << name << " gained " << amount << " of health" << std::endl;
+}
+
+std::string ClapTrap::getName() const
+{
+	return (this->name);
 }

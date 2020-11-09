@@ -2,6 +2,7 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 #include <iostream>
 
@@ -41,7 +42,13 @@ int main(void)
 	scavy.challengeNewcomer();
 	scavy.challengeNewcomer();
 	scavy.challengeNewcomer();
+	
+	ClapTrap clap("clap");
 
-
+	NinjaTrap ninja("ninja");
+	ninja.ninjaShoebox(fragy);
+	ninja.ninjaShoebox(scavy);
+	ninja.ninjaShoebox(clap);
+	ninja.ninjaShoebox(ninja);
 	return (0);
 }
