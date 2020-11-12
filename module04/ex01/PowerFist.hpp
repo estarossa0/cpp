@@ -11,6 +11,6 @@ public:
 	PowerFist(PowerFist const &other);
 	PowerFist &operator=(PowerFist const &other);
 	
-	virtual void attack() const;
+	void attack() const;
 };
 

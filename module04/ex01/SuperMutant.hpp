@@ -13,5 +13,5 @@ public:
 	SuperMutant(SuperMutant const &other);
 	SuperMutant &operator=(SuperMutant const &other);
 
-	virtual void takeDamage(int amount);
+	void takeDamage(int amount);
 };
