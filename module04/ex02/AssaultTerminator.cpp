@@ -17,7 +17,13 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const &other)
 
 AssaultTerminator &AssaultTerminator::operator=(AssaultTerminator const &other)
 {
+	(void)other;
 	return (*this);
+}
+
+ISpaceMarine *AssaultTerminator::clone() const
+{
+	return (new AssaultTerminator(*this));
 }
 
 void AssaultTerminator::battleCry() const

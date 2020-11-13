@@ -25,7 +25,7 @@ Squad &Squad::operator=(Squad const &other)
 
 Squad::~Squad()
 {
-	for (size_t i = 0; i < count; i++)
+	for (int i = 0; i < count; i++)
 	{
 		delete	units[i];
 	}
@@ -38,25 +38,24 @@ int Squad::getCount() const
 
 ISpaceMarine *Squad::getUnit(int n) const
 {
-	if (n > 0 && n <= count)
+	if (n >= 0 && n < count)
 	{
-		return (units[n - 1]);
+		return (units[n]);
 	}
 	return (nullptr);
 }
-
 int Squad::push(ISpaceMarine* item)
 {
 	ISpaceMarine **new_tab;
 	if (!item)
 		return (this->count);
-	for (size_t i = 0; i < this->count; i++)
+	for (int i = 0; i < this->count; i++)
 	{
 		if (item == units[i])
 			return (this->count);
 	}
 	new_tab = new ISpaceMarine*[count + 1];
-	for (size_t i = 0; i < this->count; i++)
+	for (int i = 0; i < this->count; i++)
 	{
 		new_tab[i] = units[i];
 	}
