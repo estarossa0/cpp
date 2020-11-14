@@ -37,6 +37,7 @@ Character &Character::operator=(Character const &other)
 		else
 			this->_inventory[i] = nullptr;
 	}
+	return (*this);
 }
 
 std::string const &Character::getName(void) const
@@ -50,7 +51,10 @@ void	Character::equip(AMateria *m)
 	for (size_t i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] == nullptr)
+		{
 			this->_inventory[i] = m;
+			break;
+		}
 	}
 }
 

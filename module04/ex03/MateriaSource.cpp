@@ -27,6 +27,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other)
 		if (other._save[i])
 			this->_save[i] = other._save[i]->clone();
 	}
+	return (*this);
 }
 
 void	MateriaSource::learnMateria(AMateria *m)
@@ -37,7 +38,9 @@ void	MateriaSource::learnMateria(AMateria *m)
 		if (this->_save[i] == nullptr)
 		{
 			this->_save[i] = m;
+			break;
 		}
+		i++;
 	}
 }
 

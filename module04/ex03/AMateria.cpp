@@ -30,10 +30,9 @@ unsigned int AMateria::getXP() const
 	return (_xp);
 }
 
-void	AMateria::use(ICharacter &target)
+void	AMateria::use(ICharacter &)
 {
 	setXpUp();
-	(void)target;
 }
 
 void	AMateria::setXpUp()
