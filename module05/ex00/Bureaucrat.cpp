@@ -57,6 +57,9 @@ void Bureaucrat::gradDec()
 Bureaucrat::GradeTooHighException::GradeTooHighException() : _error("Grade got too high.")
 {}
 
+Bureaucrat::GradeTooHighException::GradeTooHighException(std::string err) : _error(err)
+{}
+
 Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() 
 {}
 
@@ -76,6 +79,9 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException() : _error("Grade got too low.")
+{}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(std::string err) : _error(err)
 {}
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()

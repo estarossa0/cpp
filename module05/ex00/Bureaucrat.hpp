@@ -25,6 +25,7 @@ public:
 		std::string	const _error;
 	public:
 		GradeTooHighException();
+		GradeTooHighException(std::string err);
 		virtual ~GradeTooHighException() throw();
 		GradeTooHighException(GradeTooHighException const &other);
 		GradeTooHighException &operator=(GradeTooHighException const &other);
@@ -38,6 +39,7 @@ public:
 		std::string	const _error;
 	public:
 		GradeTooLowException();
+		GradeTooLowException(std::string err);
 		virtual ~GradeTooLowException() throw();
 		GradeTooLowException(GradeTooLowException const &other);
 		GradeTooLowException &operator=(GradeTooLowException const &other);
