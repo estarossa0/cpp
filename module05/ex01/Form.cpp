@@ -11,7 +11,7 @@ Form::Form(int grade, int sgrade, std::string name)
 	if (_egrade < 1)
 		throw Form::GradeTooHighException("EGrade too high");
 	if (_sgrade > 150)
-		throw Form::GradeTooHighException("SGrade too low");
+		throw Form::GradeTooLowException("SGrade too low");
 	if ( _sgrade < 1)
 		throw Form::GradeTooHighException("SGrade too high");
 }
