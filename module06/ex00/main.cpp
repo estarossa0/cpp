@@ -8,11 +8,11 @@ int		type_check(std::string str)
 
 	type = CINT;
 	index = 0;
-	if (str.length() == 1 && std::isprint(str[0]))
+	if (str.length() == 1 && std::isprint(str[0]) && !isnumber(str[0]))
 		return (CCHAR);
-	if (str == "nanf" || str == "-inff" || str == "+inff")
+	if (str == "nanf" || str == "-inff" || str == "+inff" || str == "inff")
 		return (CFLOAT);
-	if (str == "nan" || str == "-inf" || str == "+inf")
+	if (str == "nan" || str == "-inf" || str == "+inf" || str == "inf")
 		return (CDOUBLE);
 	if (str[index] == '-')
 		index++;
@@ -47,20 +47,6 @@ int		type_check(std::string str)
 	return (type);
 }
 
-/* int main()
-{
-	
-
-try
-{
-	tmp = std::stof(str);
-	std::cout << tmp;
-}
-catch(const std::exception& e)
-{
-	std::cerr << e.what() << '\n';
-}
-} */
 
 int main(int argc, char **argv)
 {
@@ -68,20 +54,41 @@ int main(int argc, char **argv)
 
 	if (argc == 2 && (type = type_check(argv[1])) != 0)
 	{
+		std::cout << std::fixed << std::setprecision(1);
 		Cast cast(argv[1], type);
 		try
 		{
-			std::cout << "int: " << static_cast<int>(cast);
+			std::cout << "char: " << static_cast<char>(cast)<< std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << std::endl;
 		}
-		
-		std::cout << "char: ";
-		std::cout << "double: ";
-		std::cout << "float: ";
-
+		std::cout << "int: ";
+		try
+		{
+			std::cout << static_cast<int>(cast) << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Impossible!\n";
+		}
+		try
+		{
+			std::cout << "float: " << static_cast<float>(cast) << 'f' << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Impossible!\n";
+		}
+		try
+		{
+			std::cout << "double: " << static_cast<double>(cast)<< std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Impossible!\n";
+		}
 	}
 	else
 	{

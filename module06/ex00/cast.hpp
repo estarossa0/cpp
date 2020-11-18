@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 #define CINT 1
 #define CDOUBLE 2
 #define CFLOAT 3
