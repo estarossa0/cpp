@@ -13,6 +13,7 @@ void randomChump()
 
 int main()
 {
+	randomChump();
 	Zombie zmb("nameless");
 	zmb.announce();
 	ZombieEvent zmb_evt;

@@ -1,4 +1,4 @@
-#pragma onces
+#pragma once
 #include "Zombie.hpp"
 class ZombieEvent
 {
