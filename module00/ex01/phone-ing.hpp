@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <vector>
 #include <unistd.h>
 #include <stdlib.h>
 #define vibe_check write(1, "v", 1);
@@ -14,7 +13,7 @@
 
 class	contact
 {
-	public:
+	private:
 	std::string		first_name;
 	std::string		last_name;
 	std::string		nickname;
@@ -26,10 +25,11 @@ class	contact
 	std::string		favorite_meal;
 	std::string		underwear_color;
 	std::string		darkest_secret;
+	public:
 	void	add();
 	void	display();
 	void	full_display();
 };
 void	display(std::string);
-void	add(std::vector<contact> &stack, char &mode);
-void	list(std::vector<contact> &stack);
+void	add(contact *stack, char mode, int *size);
+void	list(contact *stack, int size);

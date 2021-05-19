@@ -1,9 +1,8 @@
 #include "phone-ing.hpp"
 
-void	list(std::vector<contact> &stack)
+void	list(contact *stack, int size)
 {
-	int index = 1;
-	std::vector<contact>::iterator it = stack.begin();
+	int index = 1, jndex = 0;
 	LOG "|";
 	LOG "  index   " << "|";
 	LOG "first name" << "|";
@@ -11,25 +10,24 @@ void	list(std::vector<contact> &stack)
 	LOG " nickname ";
 	LOG "|";
 	LOG LINE;
-	while (it != stack.end())
+	while (jndex < size)
 	{
 		LOG "|";
 		LOG index++ << "         ";
-		it->display();
+		stack[jndex].display();
 		LOG "|";
 		LOG LINE;
-		it ++;
+		jndex++;
 	}
 }
 
-void	add(std::vector<contact> &stack, char &mode)
+void	add(contact *stack, char mode, int *size)
 {
-	if (stack.size() < 8)
+	if (*size < 8)
 	{
-		contact ct;
-		ct.add();
-		stack.push_back(ct);
+		stack[*size].add();
 		mode = NONE;
+		(*size)++;
 	}
 	else
 	{
