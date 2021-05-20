@@ -2,9 +2,10 @@
 #include "Zombie.hpp"
 #include <random>
 class ZombieHorde{
-	public:
+	private:
 	Zombie *list;
 	int size;
+	public:
 	ZombieHorde(int N);
 	void	announce();
 	~ZombieHorde();

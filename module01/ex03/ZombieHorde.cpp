@@ -2,7 +2,6 @@
 
 ZombieHorde::ZombieHorde(int N)
 {
-	int num;
 	size = N;
 	list = nullptr;
 	std::string tab[] = {"Nova", "Lilian", "Amalia", "Luna", "Chucky", "Damien", "Freddy", "Bates", "Cole", "Carrie"};
@@ -18,7 +17,7 @@ ZombieHorde::ZombieHorde(int N)
 
 void	ZombieHorde::announce()
 {
-	for (size_t i = 0; i < size && list; i++)
+	for (int i = 0; i < size && list; i++)
 	{
 		list[i].announce();
 	}
@@ -27,4 +26,5 @@ void	ZombieHorde::announce()
 ZombieHorde::~ZombieHorde()
 {
 	delete[] list;
+	std::cout << "Horde destroyed\n";
 }
