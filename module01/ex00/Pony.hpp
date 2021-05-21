@@ -1,6 +1,6 @@
-#include <iostream>
+#pragma once
 #include <string>
-
+#include <iostream>
 class pony
 {
 	public:
