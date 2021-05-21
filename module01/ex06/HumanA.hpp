@@ -4,9 +4,9 @@
 class HumanA
 {
 public:
-	Weapon *wep;
 	std::string name;
+	Weapon &wep;
 
-	HumanA(std::string new_name, Weapon *new_weapon);
+	HumanA(std::string new_name, Weapon &new_weapon);
 	void attack();
 };
