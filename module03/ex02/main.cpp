@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	std::cout << "TEST FRAGTRAP\n";
+	std::cout << "\033[1;31m""TEST FRAGTRAP\n""\033[0m";
 	FragTrap fragy("fragy");
 	FragTrap fragy2;
 	fragy.meleeAttack("human");
@@ -25,7 +25,7 @@ int main(void)
 	fragy.vaulthunter_dot_exe("guy");
 	fragy.vaulthunter_dot_exe("guy");
 	fragy.vaulthunter_dot_exe("guy");
-	std::cout << "TEST SCAVTRAP\n";
+	std::cout << "\033[1;31m""TEST SCAVTRAP\n""\033[0m";
 	ScavTrap scavy("scavy");
 	scavy.meleeAttack("human");
 	scavy.rangedAttack("pelikan");
