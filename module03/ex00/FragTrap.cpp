@@ -1,5 +1,10 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap()
+{
+	std::cout << "Hey I'm FragTrap this my default constructer" << std::endl;
+}
+
 FragTrap::FragTrap(std::string const &name):
 hit_points(100), max_hit_points(100), energy_points(100),
 max_energy_points(100), level(1), name(name), melee_attack_damage(30),

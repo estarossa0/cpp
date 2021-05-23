@@ -1,5 +1,10 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	std::cout << "Hey I'm ScavTrap this my default constructer" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string const &name):
 hit_points(100), max_hit_points(100), energy_points(50),
 max_energy_points(50), level(1), name(name), melee_attack_damage(20),

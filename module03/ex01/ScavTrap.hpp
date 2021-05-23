@@ -16,6 +16,7 @@ private:
 	int		armor_damage_reduction;
 
 public:
+	ScavTrap();
     ScavTrap(std::string const &name);
 	ScavTrap(ScavTrap const & src);
     ~ScavTrap(void);

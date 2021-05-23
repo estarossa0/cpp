@@ -16,6 +16,7 @@ class FragTrap
 		int		ranged_attack_damage;
 		int		armor_damage_reduction;
 	public:
+		FragTrap();
 		FragTrap(std::string const &name);
 		FragTrap(FragTrap const &copy);
 		~FragTrap(void);

@@ -9,11 +9,10 @@ ClapTrap::ClapTrap()
 {
 	std::cout << "Hey ClapTrap is here" << std::endl;
 }
-//constructer
-//initialize
-//constructer body
+
 ClapTrap::ClapTrap(int hit_points_, int max_hit_points_, int energy_points_, int max_energy_points_,
 int level_, std::string	name_, int melee_attack_damage_, int ranged_attack_damage_, int armor_damage_reduction_):
+
 hit_points(hit_points_), max_hit_points(max_hit_points_), energy_points(energy_points_),
 max_energy_points(max_energy_points_), level(level_), name(name_), melee_attack_damage(melee_attack_damage_),
 ranged_attack_damage(ranged_attack_damage_), armor_damage_reduction(armor_damage_reduction_)

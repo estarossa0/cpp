@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap()
 {
-	std::cout << "Hey I'm FragTrap my name is " << name << " thsi my default constructer" << std::endl;
+	std::cout << "Hey I'm FragTrap this my default constructer" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name): ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
