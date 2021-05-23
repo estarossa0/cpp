@@ -34,9 +34,14 @@ ClapTrap::~ClapTrap()
 ClapTrap &  ClapTrap::operator=(ClapTrap const & other)
 {
 	hit_points = other.hit_points;
-	max_hit_points = other.hit_points;
+	max_hit_points = other.max_hit_points;
+	energy_points = other.energy_points;
+	max_energy_points = other.max_energy_points;
 	level = other.level;
 	name = other.name;
+	melee_attack_damage = other.melee_attack_damage;
+	ranged_attack_damage = other.ranged_attack_damage;
+	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "<cp " << name + " " + other.name + "> ENTER"<< std::endl;
 	return (*this);
 }

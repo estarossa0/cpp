@@ -2,7 +2,7 @@
 
 NinjaTrap::NinjaTrap()
 {
-	std::cout << "Hey I'm NinjaTrap my name is " << name << " thsi my default constructer" << std::endl;
+	std::cout << "Hey I'm NinjaTrap this my default constructer" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name): ClapTrap("NinjaTrap", 60, 60, 120, 120, 1, name, 60, 5, 0)
@@ -24,7 +24,7 @@ NinjaTrap::~NinjaTrap()
 NinjaTrap &  NinjaTrap::operator=(NinjaTrap const & other)
 {
 	hit_points = other.hit_points;
-	max_hit_points = other.hit_points;
+	max_hit_points = other.max_hit_points;
 	energy_points = other.energy_points;
 	max_energy_points = other.max_energy_points;
 	level = other.level;

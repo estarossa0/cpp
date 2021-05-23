@@ -24,7 +24,7 @@ FragTrap::~FragTrap()
 FragTrap &  FragTrap::operator=(FragTrap const & other)
 {
 	hit_points = other.hit_points;
-	max_hit_points = other.hit_points;
+	max_hit_points = other.max_hit_points;
 	energy_points = other.energy_points;
 	max_energy_points = other.max_energy_points;
 	level = other.level;
