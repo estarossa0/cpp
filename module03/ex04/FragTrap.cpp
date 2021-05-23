@@ -5,8 +5,18 @@ FragTrap::FragTrap()
 	std::cout << "Hey I'm FragTrap this my default constructer" << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name): ClapTrap("FR4G-TP", 100, 100, 100, 100, 1, name, 30, 20, 5)
+FragTrap::FragTrap(std::string const &_name)
 {
+	this->FragTrap::type = "FragTrap";
+	this->FragTrap::hit_points = 100;
+	this->FragTrap::max_hit_points = 100;
+	this->FragTrap::energy_points = 100;
+	this->FragTrap::max_energy_points = 100;
+	this->FragTrap::level = 1;
+	this->FragTrap::name = _name;
+	this->FragTrap::melee_attack_damage = 30;
+	this->FragTrap::ranged_attack_damage = 20;
+	this->FragTrap::armor_damage_reduction = 5;
 	std::cout << "Hey I'm FragTrap my name is " << name << " I'm new here" << std::endl;
 }
 
