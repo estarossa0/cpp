@@ -5,7 +5,7 @@ NinjaTrap::NinjaTrap()
 	std::cout << "Hey I'm NinjaTrap my name is " << name << " thsi my default constructer" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string const &name): ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
+NinjaTrap::NinjaTrap(std::string const &name): ClapTrap("NinjaTrap", 60, 60, 120, 120, 1, name, 60, 5, 0)
 {
 	std::cout << "Hey I'm NinjaTrap my name is " << name << " I'm new here" << std::endl;
 }

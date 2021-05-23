@@ -2,10 +2,10 @@
 #include "ScavTrap.hpp"
 ScavTrap::ScavTrap()
 {
-	std::cout << "Hey I'm ScavTrap my name is " << name << " thsi my default constructer" << std::endl;
+	std::cout << "Hey I'm ScavTrap this my default constructer" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name): ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
+ScavTrap::ScavTrap(std::string const &name): ClapTrap("ScavTrap", 100, 100, 50, 50, 1, name, 20, 15, 3)
 {
 	std::cout << "Hey I'm ClapTrap my name is " << name << " I'm new here" << std::endl;
 }
