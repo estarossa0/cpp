@@ -3,12 +3,14 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
-
+#include "SuperTrap.hpp"
 #include <iostream>
 
 int main(void)
 {
+	std::cout << "\033[1;31m";
 	std::cout << "TEST FRAGTRAP\n";
+	std::cout << "\033[0m";
 	FragTrap fragy("fragy");
 	FragTrap fragy2;
 	fragy.meleeAttack("human");
@@ -26,7 +28,9 @@ int main(void)
 	fragy.vaulthunter_dot_exe("guy");
 	fragy.vaulthunter_dot_exe("guy");
 	fragy.vaulthunter_dot_exe("guy");
+	std::cout << "\033[1;31m";
 	std::cout << "TEST SCAVTRAP\n";
+	std::cout << "\033[0m";
 	ScavTrap scavy("scavy");
 	scavy.meleeAttack("human");
 	scavy.rangedAttack("pelikan");
@@ -42,7 +46,10 @@ int main(void)
 	scavy.challengeNewcomer();
 	scavy.challengeNewcomer();
 	scavy.challengeNewcomer();
-	
+
+	std::cout << "\033[1;31m";
+	std::cout << "TEST NINJATRAP\n";
+	std::cout << "\033[0m";
 	ClapTrap clap("clap");
 
 	NinjaTrap ninja("ninja");
@@ -50,5 +57,13 @@ int main(void)
 	ninja.ninjaShoebox(scavy);
 	ninja.ninjaShoebox(clap);
 	ninja.ninjaShoebox(ninja);
+
+	std::cout << "\033[1;31m";
+	std::cout << "TEST SUPERTRAP\n";
+	std::cout << "\033[0m";
+	SuperTrap	supie("supie");
+	supie.meleeAttack("person");
+	supie.rangedAttack("another person");
+	supie.vaulthunter_dot_exe("himself");
 	return (0);
 }

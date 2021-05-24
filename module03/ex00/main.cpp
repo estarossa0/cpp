@@ -18,5 +18,6 @@ int main(void)
 	r1.vaulthunter_dot_exe("guy");
 	r1.vaulthunter_dot_exe("guy");
 	r1.vaulthunter_dot_exe("guy");
+	r1.vaulthunter_dot_exe("guy");
 	return (0);
 }
