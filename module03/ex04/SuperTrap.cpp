@@ -7,15 +7,6 @@ SuperTrap::SuperTrap()
 
 SuperTrap::SuperTrap(std::string const &_name): FragTrap(_name), NinjaTrap(_name)
 {
-	hit_points = FragTrap::hit_points;
-	max_hit_points = FragTrap::max_hit_points;
-	energy_points = NinjaTrap::energy_points;
-	max_energy_points = NinjaTrap::max_energy_points;
-	level = 1;
-	name = _name;
-	melee_attack_damage = NinjaTrap::melee_attack_damage;
-	ranged_attack_damage = FragTrap::ranged_attack_damage;
-	armor_damage_reduction = FragTrap::armor_damage_reduction;
 	std::cout << "Hey my name is " << name << " I'm new here" << std::endl;
 }
 
@@ -27,7 +18,7 @@ SuperTrap::SuperTrap(SuperTrap const & src)
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "poor " << this->FragTrap::name << " stopped functioning" << std::endl;
+	std::cout << "poor " << this->FragTrap::name << " died" << std::endl;
 }
 
 SuperTrap &  SuperTrap::operator=(SuperTrap const & other)

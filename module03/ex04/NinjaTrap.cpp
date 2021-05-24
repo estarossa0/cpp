@@ -7,15 +7,11 @@ NinjaTrap::NinjaTrap()
 
 NinjaTrap::NinjaTrap(std::string const &_name)
 {
-	this->NinjaTrap::hit_points = 60;
-	this->NinjaTrap::max_hit_points = 60;
 	this->NinjaTrap::energy_points = 120;
 	this->NinjaTrap::max_energy_points = 120;
 	this->NinjaTrap::level = 1;
 	this->NinjaTrap::name = _name;
 	this->NinjaTrap::melee_attack_damage = 60;
-	this->NinjaTrap::ranged_attack_damage = 5;
-	this->NinjaTrap::armor_damage_reduction = 0;
 	std::cout << "Hey I'm NinjaTrap my name is " << name << " I'm new here" << std::endl;
 }
 
