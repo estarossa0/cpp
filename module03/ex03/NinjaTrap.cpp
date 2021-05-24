@@ -5,7 +5,7 @@ NinjaTrap::NinjaTrap()
 	std::cout << "Hey I'm NinjaTrap this my default constructer" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string const &name): ClapTrap("NinjaTrap", 60, 60, 120, 120, 1, name, 60, 5, 0)
+NinjaTrap::NinjaTrap(std::string const &name): ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
 	std::cout << "Hey I'm NinjaTrap my name is " << name << " I'm new here" << std::endl;
 }
@@ -34,6 +34,18 @@ NinjaTrap &  NinjaTrap::operator=(NinjaTrap const & other)
 	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "<cp " << name + " " + other.name + "> ENTER"<< std::endl;
 	return (*this);
+}
+
+void		NinjaTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "A NinjaTrap " << name << " attacks " << target
+	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
+}
+
+void		NinjaTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "A NinjaTrap " << name << " attacks " << target
+	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
 }
 
 void NinjaTrap::ninjaShoebox(ClapTrap const &other) const

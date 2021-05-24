@@ -16,6 +16,8 @@ class NinjaTrap : public ClapTrap
 
 		NinjaTrap		&operator=(NinjaTrap const &other);
 
+		void			rangedAttack(std::string const &target);
+		void			meleeAttack(std::string const &target);
 		void ninjaShoebox(FragTrap const &other) const;
 		void ninjaShoebox(ScavTrap const &other) const;
 		void ninjaShoebox(ClapTrap const &other) const;

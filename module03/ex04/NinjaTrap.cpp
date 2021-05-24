@@ -7,7 +7,6 @@ NinjaTrap::NinjaTrap()
 
 NinjaTrap::NinjaTrap(std::string const &_name)
 {
-	this->NinjaTrap::type = "NinjaTrap";
 	this->NinjaTrap::hit_points = 60;
 	this->NinjaTrap::max_hit_points = 60;
 	this->NinjaTrap::energy_points = 120;
@@ -29,6 +28,18 @@ NinjaTrap::NinjaTrap(NinjaTrap const & src)
 NinjaTrap::~NinjaTrap()
 {
 	std::cout << "poor NinjaTrap " << name << " stopped functioning" << std::endl;
+}
+
+void		NinjaTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "A NinjaTrap " << name << " attacks " << target
+	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
+}
+
+void		NinjaTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "A NinjaTrap " << name << " attacks " << target
+	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
 }
 
 NinjaTrap &  NinjaTrap::operator=(NinjaTrap const & other)

@@ -7,7 +7,6 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string const &_name)
 {
-	this->FragTrap::type = "FragTrap";
 	this->FragTrap::hit_points = 100;
 	this->FragTrap::max_hit_points = 100;
 	this->FragTrap::energy_points = 100;
@@ -44,6 +43,18 @@ FragTrap &  FragTrap::operator=(FragTrap const & other)
 	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "<cp " << name + " " + other.name + "> ENTER"<< std::endl;
 	return (*this);
+}
+
+void		FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "A FragTrap " << name << " attacks " << target
+	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
+}
+
+void		FragTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "A FragTrap " << name << " attacks " << target
+	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target) {

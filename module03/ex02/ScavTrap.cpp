@@ -5,7 +5,7 @@ ScavTrap::ScavTrap()
 	std::cout << "Hey I'm ScavTrap this my default constructer" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name): ClapTrap("ScavTrap", 100, 100, 50, 50, 1, name, 20, 15, 3)
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
 {
 	std::cout << "Hey I'm ClapTrap my name is " << name << " I'm new here" << std::endl;
 }
@@ -34,6 +34,18 @@ ScavTrap &  ScavTrap::operator=(ScavTrap const & other)
 	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "copying " << name + " into " + other.name + "... DONE"<< std::endl;
 	return (*this);
+}
+
+void		ScavTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "A ScavTrap " << name << " attacks " << target
+	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
+}
+
+void		ScavTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "A ScavTrap " << name << " attacks " << target
+	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer()

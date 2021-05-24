@@ -5,7 +5,7 @@ FragTrap::FragTrap()
 	std::cout << "Hey I'm FragTrap this my default constructer" << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name): ClapTrap("FR4G-TP", 100, 100, 100, 100, 1, name, 30, 20, 5)
+FragTrap::FragTrap(std::string const &name): ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
 	std::cout << "Hey I'm FragTrap my name is " << name << " I'm new here" << std::endl;
 }
@@ -34,6 +34,18 @@ FragTrap &  FragTrap::operator=(FragTrap const & other)
 	armor_damage_reduction = other.armor_damage_reduction;
 	std::cout << "<cp " << name + " " + other.name + "> ENTER"<< std::endl;
 	return (*this);
+}
+
+void		FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "A FragTrap " << name << " attacks " << target
+	<< " at range, causing " << ranged_attack_damage << " points of damage !" << std::endl;
+}
+
+void		FragTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "A FragTrap " << name << " attacks " << target
+	<< " at melee, causing " << melee_attack_damage << " points of damage !" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target) {

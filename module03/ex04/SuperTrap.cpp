@@ -16,7 +16,6 @@ SuperTrap::SuperTrap(std::string const &_name): FragTrap(_name), NinjaTrap(_name
 	melee_attack_damage = NinjaTrap::melee_attack_damage;
 	ranged_attack_damage = FragTrap::ranged_attack_damage;
 	armor_damage_reduction = FragTrap::armor_damage_reduction;
-	type = "SuperTrap";
 	std::cout << "Hey my name is " << name << " I'm new here" << std::endl;
 }
 
