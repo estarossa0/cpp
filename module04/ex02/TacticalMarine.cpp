@@ -12,6 +12,7 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine::TacticalMarine(TacticalMarine const &other)
 {
+	std::cout << "Tactical Marine ready for battle!\n";
 	*this = other;
 }
 

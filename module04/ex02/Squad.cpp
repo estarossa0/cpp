@@ -60,7 +60,7 @@ int Squad::push(ISpaceMarine* item)
 		new_tab[i] = units[i];
 	}
 	new_tab[this->count] = item;
-	new_tab[++(this->count)] = nullptr;
+	this->count++;
 	delete [] units;
 	units = new_tab;
 	return (this->count);

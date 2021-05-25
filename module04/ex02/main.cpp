@@ -6,19 +6,22 @@
 
 int main()
 {
-ISpaceMarine* bob = new TacticalMarine;
-ISpaceMarine* jim = new AssaultTerminator;
-ISquad* vlc = new Squad;
-vlc->push(bob);
-vlc->push(jim);
+Squad *vlc = new Squad;
 
-for (int i = 0; i < vlc->getCount(); ++i)
-{
-ISpaceMarine* cur = vlc->getUnit(i);
-cur->battleCry();
-cur->rangedAttack();
-cur->meleeAttack();
-}
-delete vlc;
-return 0;
+	for (int i = 0; i < 10; i++) {
+		if (i % 2 == 0) {
+			vlc->push(new TacticalMarine);
+		} else {
+			vlc->push(new AssaultTerminator);
+		}
+	}
+
+	for (int i = 0; i < vlc->getCount(); ++i) {
+		ISpaceMarine *cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+
+	delete vlc;
 }

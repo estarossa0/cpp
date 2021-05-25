@@ -12,6 +12,7 @@ AssaultTerminator::~AssaultTerminator()
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const &other)
 {
+	std::cout << "* teleports from space *\n";
 	*this = other;
 }
 
