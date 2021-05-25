@@ -4,7 +4,11 @@ Character::Character() {}
 
 Character::~Character()
 {
-
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i])
+			delete _inventory[i];
+	}
 }
 
 Character::Character(std::string const name) : _name(name)
@@ -73,5 +77,4 @@ void Character::use(int idx, ICharacter &target)
 			this->_inventory[idx]->use(target);
 		}
 	}
-	
 }

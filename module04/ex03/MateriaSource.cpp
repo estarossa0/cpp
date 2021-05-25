@@ -20,7 +20,8 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other)
 {
 	for (size_t i = 0; i < 4; i++)
 	{
-		delete this->_save[i];
+		if (this->_save[i])
+			delete this->_save[i];
 	}
 	for (size_t i = 0; i < 4; i++)
 	{
