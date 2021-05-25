@@ -14,7 +14,7 @@ private:
 public:
 	Character(Character const &other);
 	Character(std::string const & name);
-	virtual ~Character();
+	~Character();
 	Character &operator=(Character const &other);
 
 	void recoverAP();

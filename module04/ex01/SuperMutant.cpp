@@ -25,7 +25,7 @@ SuperMutant &SuperMutant::operator=(SuperMutant const &other)
 void SuperMutant::takeDamage(int amount)
 {
 	amount -= 3;
-	if (hp < 0 || amount < 0)
+	if (hp > 0 && amount >= 0)
 	{
 		std::cout << type + " taking " << amount << " damage\n";
 		hp -= amount;

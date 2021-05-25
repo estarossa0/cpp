@@ -31,6 +31,7 @@ void	Character::recoverAP()
 	ap += 10;
 	if (ap > 40)
 		ap = 40;
+	std::cout << this->name + " Recovered 10 AP he have now " << this->ap << std::endl;
 }
 void	Character::equip(AWeapon *new_wep)
 {

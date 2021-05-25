@@ -1,6 +1,6 @@
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 21, 5)
+PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 {
 	std::cout << "PlasmaRifle constructed\n";
 }
