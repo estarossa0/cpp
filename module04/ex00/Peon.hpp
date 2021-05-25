@@ -3,13 +3,13 @@
 
 class Peon : public Victim
 {
-private:
+protected:
 	Peon();
 public:
 	Peon(std::string name);
 	Peon(Peon const & other);
 	Peon &operator=(Peon const &other);
-	~Peon();
+	virtual ~Peon();
 	virtual void getPolymorphed() const;
 };
 
