@@ -124,8 +124,3 @@ std::ostream & operator << (std::ostream &out, Form const &D)
 		out << ", is not signed\n";
 	return (out);
 }
-
-void Form::executeForm(Form const & )
-{
-
-}
