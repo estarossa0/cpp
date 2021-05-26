@@ -70,18 +70,8 @@ Form::GradeTooHighException::GradeTooHighException() : _error("Form grade got to
 Form::GradeTooHighException::GradeTooHighException(std::string err) : _error(err)
 {}
 
-Form::GradeTooHighException::~GradeTooHighException() throw() 
+Form::GradeTooHighException::~GradeTooHighException() throw()
 {}
-
-Form::GradeTooHighException::GradeTooHighException(GradeTooHighException const &other)
-{
-	*this = other;
-}
-
-Form::GradeTooHighException &Form::GradeTooHighException::operator=(GradeTooHighException const &)
-{
-	return (*this);
-}
 
 const char *Form::GradeTooHighException::what() const throw()
 {
@@ -96,16 +86,6 @@ Form::GradeTooLowException::GradeTooLowException(std::string err) : _error(err)
 
 Form::GradeTooLowException::~GradeTooLowException() throw()
 {}
-
-Form::GradeTooLowException::GradeTooLowException(GradeTooLowException const &other)
-{
-	*this = other;
-}
-
-Form::GradeTooLowException &Form::GradeTooLowException::operator=(GradeTooLowException const &)
-{
-	return (*this);
-}
 
 const char *Form::GradeTooLowException::what() const throw()
 {

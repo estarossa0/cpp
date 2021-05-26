@@ -27,9 +27,7 @@ public:
 		GradeTooHighException();
 		GradeTooHighException(std::string err);
 		virtual ~GradeTooHighException() throw();
-		GradeTooHighException(GradeTooHighException const &other);
-		GradeTooHighException &operator=(GradeTooHighException const &other);
-		
+
 		virtual const char *what() const throw();
 	};
 
@@ -41,9 +39,7 @@ public:
 		GradeTooLowException();
 		GradeTooLowException(std::string err);
 		virtual ~GradeTooLowException() throw();
-		GradeTooLowException(GradeTooLowException const &other);
-		GradeTooLowException &operator=(GradeTooLowException const &other);
-		
+
 		virtual const char *what() const throw();
 	};
 };

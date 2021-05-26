@@ -60,18 +60,8 @@ Bureaucrat::GradeTooHighException::GradeTooHighException() : _error("Grade got t
 Bureaucrat::GradeTooHighException::GradeTooHighException(std::string err) : _error(err)
 {}
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() 
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {}
-
-Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &other)
-{
-	*this = other;
-}
-
-Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const &)
-{
-	return (*this);
-}
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
@@ -86,16 +76,6 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(std::string err) : _error
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
 {}
-
-Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &other)
-{
-	*this = other;
-}
-
-Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const &)
-{
-	return (*this);
-}
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
