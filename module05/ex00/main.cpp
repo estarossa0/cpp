@@ -28,6 +28,7 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << bur;
 	try
 	{
 		bur.gradDec();
@@ -36,4 +37,5 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << bur;
 }

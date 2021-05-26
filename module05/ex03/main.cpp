@@ -7,8 +7,33 @@
 
 int main()
 {
-	Intern in;
+	Bureaucrat	bob(1, "Robert");
+	Intern		someRandomIntern;
+	Form*		form;
 
-	Form *fr = in.makeForm("presidential pardon", "person");
-	std::cout << *fr;
+	try
+	{
+		form = someRandomIntern.makeForm("presidential pardon", "Joe Mama");
+		if (form != NULL) {
+			form->beSigned(bob);
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "-----------" << std::endl;
+	try
+	{
+		form = someRandomIntern.makeForm("whatever", "name");
+		if (form != NULL) {
+			bob.executeForm(*form);
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	return 0;
 }

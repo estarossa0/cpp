@@ -55,11 +55,11 @@ void Form::beSigned(Bureaucrat &src)
 	if (src.getGrade() <= this->_sgrade)
 	{
 		this->_is_signed = true;
-		src.signForm(*this, "");
+		src.signForm(*this);
 	}
 	else
 	{
-		src.signForm(*this, "Grade is lower than sign grade");
+		src.signForm(*this);
 		throw Form::GradeTooLowException("Form failed to get signed");
 	}
 }

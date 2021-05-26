@@ -18,7 +18,10 @@ RobotomyRequestForm &RobotomyRequestForm::operator = (RobotomyRequestForm const 
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	Form::execute(executor);
+	if (!this->getSigned())
+		throw Form::FormExecuteFail("Form is not signed");
+	if (executor.getGrade() > this->getEGrade())
+		throw Form::FormExecuteFail("Bureaucrat grade are lower than form execute grade");
 	static int i = 0;
 	std::cout << "brrrrrrrr" << std::endl;
 	if (!(i % 2))

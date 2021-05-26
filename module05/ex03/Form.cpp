@@ -55,11 +55,11 @@ void Form::beSigned(Bureaucrat &src)
 	if (src.getGrade() <= this->_sgrade)
 	{
 		this->_is_signed = true;
-		src.signForm(*this, "");
+		src.signForm(*this);
 	}
 	else
 	{
-		src.signForm(*this, "Grade is lower than sign grade");
+		src.signForm(*this);
 		throw Form::GradeTooLowException("Form failed to get signed");
 	}
 }
@@ -106,13 +106,6 @@ const char *Form::FormExecuteFail::what() const throw()
 	return _error.c_str();
 }
 
-void Form::execute(Bureaucrat const &executor) const
-{
-	if (!this->_is_signed)
-		throw Form::FormExecuteFail("Form is not signed");
-	if (executor.getGrade() > this->_egrade)
-		throw Form::FormExecuteFail("Bureaucrat grade are lower than form execute grade");
-}
 
 std::ostream & operator << (std::ostream &out, Form const &D)
 {

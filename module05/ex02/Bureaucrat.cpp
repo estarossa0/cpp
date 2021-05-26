@@ -81,7 +81,7 @@ std::ostream & operator << (std::ostream &out, Bureaucrat const &D)
 	return out << D.getName() << ", bureaucrat grade " << D.getGrade() << std::endl;;
 }
 
-void Bureaucrat::signForm(Form const &form, std::string const &reason)
+void Bureaucrat::signForm(Form const &form)
 {
 	if (form.getSigned())
 	{
@@ -89,7 +89,7 @@ void Bureaucrat::signForm(Form const &form, std::string const &reason)
 	}
 	else
 	{
-		std::cout << this->_name + " cannot sign " + form.getName() + " because " + reason << std::endl;
+		std::cout << this->_name + " cannot sign " + form.getName() + " because Grade is lower than sign grade" << std::endl;
 	}
 }
 

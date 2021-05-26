@@ -21,7 +21,10 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	Form::execute(executor);
+	if (!this->getSigned())
+		throw Form::FormExecuteFail("Form is not signed");
+	if (executor.getGrade() > this->getEGrade())
+		throw Form::FormExecuteFail("Bureaucrat grade are lower than form execute grade");
 	std::string FName = this->getName() + "_shrubbery";
 	std::ofstream	Fout(FName);
 	Fout << "      /\\      \n"
@@ -33,5 +36,21 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 "/\\O\\/\\/*/\\/O/\\\n"
 "      ||      \n"
 "      ||      \n"
-"      ||      \n";
+"      ||      \n"
+"        >X<\n"
+"         A\n"
+"        d$b\n"
+"      .d\\$$b.\n"
+"    .d$i$$\\$$b.\n"
+"       d$$@b\n"
+"      d\\$$$ib\n"
+"    .d$$$\\$$$b\n"
+"  .d$$@$$$$\\$$ib.\n"
+"      d$$i$$b\n"
+"     d\\$$$$@$b\n"
+"  .d$@$$\\$$$$$@b.\n"
+".d$$$$i$$$\\$$$$$$b.\n"
+"        ###\n"
+"        ###\n"
+"        ###\n";
 }
