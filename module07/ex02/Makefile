@@ -2,7 +2,6 @@ NAME = main
 INCLUDES = ./
 FLAGS = -Wall -Wextra -Werror
 SRC =	main.cpp \
-		Array.cpp
 
 
 OBJ = $(SRC:.cpp=.o)
